@@ -1,6 +1,7 @@
 package com.glureau.benchmark
 
 import android.content.Context
+import android.text.PrecomputedText
 import android.view.LayoutInflater
 import android.view.View
 import androidx.benchmark.junit4.BenchmarkRule
@@ -34,6 +35,20 @@ class ExampleBenchmark {
 
         benchmarkRule.measureRepeated {
             inflatedView.message.text = msg1
+        }
+    }
+
+    @Test
+    fun set_text_optimized() {
+        val msg1 = "msg1"
+
+        val params: PrecomputedText.Params = inflatedView.message.textMetricsParams
+        val precomputedText = PrecomputedText.create(msg1, params)
+
+        Thread.sleep(1000)
+
+        benchmarkRule.measureRepeated {
+            inflatedView.message.text = precomputedText
         }
     }
 

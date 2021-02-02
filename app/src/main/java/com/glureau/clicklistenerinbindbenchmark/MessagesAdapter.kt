@@ -32,13 +32,13 @@ class MessagesAdapter : ListAdapter<ImMessage, MessagesAdapter.MessageViewHolder
         fun bind(message: ImMessage) {
             itemBinding.message.text = message.content
             if (message.sentByMe) {
-                itemBinding.message.gravity = Gravity.END
-                //itemBinding.message.textAlignment = View.TEXT_ALIGNMENT_CENTER
+                //itemBinding.message.gravity = Gravity.END
+                itemBinding.message.textAlignment = View.TEXT_ALIGNMENT_CENTER
                 itemBinding.root.setCardBackgroundColor(color1)
             } else {
                 itemBinding.root.setCardBackgroundColor(color2)
-                itemBinding.message.gravity = Gravity.START
-                //itemBinding.message.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
+                //itemBinding.message.gravity = Gravity.START
+                itemBinding.message.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
             }
         }
     }
