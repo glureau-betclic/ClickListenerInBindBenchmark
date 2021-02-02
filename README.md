@@ -14,6 +14,7 @@ Results :
 
 # Test code:
 
+[See full test class](https://github.com/glureau-betclic/ClickListenerInBindBenchmark/blob/main/benchmark/src/androidTest/java/com/glureau/benchmark/ExampleBenchmark.kt)
 
     private val context = ApplicationProvider.getApplicationContext<Context>()
     private val inflater = LayoutInflater.from(context)
